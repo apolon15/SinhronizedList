@@ -9,7 +9,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class Main {
 
-    public static void main(String[] args) throws InterruptedException, FileNotFoundException {
+    public static void main(String[] args) throws InterruptedException, IOException {
         ArrayList<Integer> list = new ArrayList<>();
         List<Integer> syncList = Collections.synchronizedList(list);
         int y = 1000;
@@ -63,6 +63,10 @@ public class Main {
             ex.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
+        }finally{
+            outputStream.close();
+            outputStream2.close();
+
         }
 
 
